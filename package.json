@@ -1,0 +1,9 @@
+{
+  "name": "book-rest-api-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vercel-ready Book REST API Task 3",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}

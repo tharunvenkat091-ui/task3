@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book REST API | Task 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">📚</div>
+      <div>
+        <h1>Book REST API</h1>
+        <p>Node.js + Express • Task 3</p>
+      </div>
+    </div>
+    <div class="server-status"><span></span> API Server Online</div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">REST API PROJECT</span>
+        <h2>Manage your <strong>book collection</strong> with CRUD operations.</h2>
+        <p>Use this simple web interface to test GET, POST, PUT and DELETE operations against the Express API.</p>
+        <div class="endpoint"><span>BASE URL</span> http://localhost:3000</div>
+      </div>
+
+      <div class="api-flow">
+        <div class="flow-title">HTTP METHODS</div>
+        <div class="method get">GET <small>/books</small></div>
+        <div class="method post">POST <small>/books</small></div>
+        <div class="method put">PUT <small>/books/:id</small></div>
+        <div class="method delete">DELETE <small>/books/:id</small></div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel form-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="mini-label">CRUD CONTROL</span>
+            <h3 id="formTitle">Add New Book</h3>
+          </div>
+          <span class="code-icon">&lt;/&gt;</span>
+        </div>
+
+        <form id="bookForm">
+          <input type="hidden" id="bookId">
+
+          <label for="title">Book Title</label>
+          <input id="title" type="text" placeholder="e.g. Clean Code" required>
+
+          <label for="author">Author</label>
+          <input id="author" type="text" placeholder="e.g. Robert C. Martin" required>
+
+          <div class="form-actions">
+            <button class="primary" type="submit" id="submitBtn">＋ Add Book</button>
+            <button class="secondary hidden" type="button" id="cancelBtn">Cancel Edit</button>
+          </div>
+        </form>
+
+        <div class="request-preview">
+          <div class="request-title">REQUEST BODY</div>
+          <pre id="requestPreview">{ "title": "...", "author": "..." }</pre>
+        </div>
+      </div>
+
+      <div class="panel books-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="mini-label">IN-MEMORY STORAGE</span>
+            <h3>Books <span id="bookCount">0</span></h3>
+          </div>
+          <button class="refresh" id="refreshBtn">↻ Refresh</button>
+        </div>
+
+        <div id="message" class="message hidden"></div>
+        <div id="booksList" class="books-list"></div>
+      </div>
+    </section>
+
+    <section class="architecture">
+      <div class="arch-card">
+        <span>01</span>
+        <b>Client</b>
+        <small>Browser UI</small>
+      </div>
+      <div class="arrow">→</div>
+      <div class="arch-card">
+        <span>02</span>
+        <b>Express</b>
+        <small>Routes + Middleware</small>
+      </div>
+      <div class="arrow">→</div>
+      <div class="arch-card">
+        <span>03</span>
+        <b>Books Array</b>
+        <small>Memory storage</small>
+      </div>
+      <div class="arrow">→</div>
+      <div class="arch-card">
+        <span>04</span>
+        <b>JSON</b>
+        <small>API response</small>
+      </div>
+    </section>
+
+    <footer>
+      <span>Task 3 • Book Management REST API</span>
+      <span>Node.js • Express • JSON • CRUD</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
